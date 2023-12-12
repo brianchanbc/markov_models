@@ -28,8 +28,6 @@ class Hashtable(MutableMapping):
         This particular hash function uses Horner's rule to compute a large polynomial.
 
         See https://www.cs.umd.edu/class/fall2019/cmsc420-0201/Lects/lect10-hash-basics.pdf
-
-        DO NOT CHANGE THIS FUNCTION
         """
         val = 0
         for letter in key:
@@ -99,12 +97,7 @@ class Hashtable(MutableMapping):
 
     def __iter__(self):
         """
-        You do not need to implement __iter__ for this assignment.
-        This stub is needed to satisfy `MutableMapping` however.)
-
-        Note, by not implementing __iter__ your implementation of Markov will
-        not be able to use things that depend upon it,
-        that shouldn't be a problem but you'll want to keep that in mind.
+        To satisfy `MutableMapping` 
         """
         raise NotImplementedError("__iter__ not implemented")
     

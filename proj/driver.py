@@ -29,12 +29,12 @@ if __name__ == "__main__":
         print("Final parameter must either be 'hashtable' or 'dict'")
         sys.exit(1)
 
-    # TODO: add code here to open files & read text        
+    # Open files & read text        
     speech1 = read_file(filenameA)
     speech2 = read_file(filenameB)
     speech3 = read_file(filenameC)
     
-    # TODO: add code to call identify_speaker & print results
+    # Call identify_speaker & print results
     speaker1_pr, speaker2_pr, speaker = \
         identify_speaker(speech1, speech2, speech3, k, hashtable_or_dict)
         

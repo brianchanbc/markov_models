@@ -12,17 +12,17 @@ if __name__ == "__main__":
         )
         sys.exit(1)
 
-    # extract parameters from command line & convert types
+    # Extract parameters from command line & convert types
     filenameA, filenameB, filenameC, max_k, runs = sys.argv[1:]
     max_k = int(max_k)
     runs = int(runs)
 
-    # TODO: add code here to open files & read text
+    # Open files & read text
     speech1 = read_file(filenameA)
     speech2 = read_file(filenameB)
     speech3 = read_file(filenameC)
     
-    # TODO: run performance tests as outlined in README.md
+    # Run performance tests as outlined in README.md
     # Create a dataframe to store the results
     df = pd.DataFrame(columns=['Implementation', 'K', 'Run', 'Time'])
     for k in ['hashtable', 'dict']:
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     # get the average time for each implementation and k
     average_times = df.groupby(['Implementation', 'K'])['Time'].mean().reset_index()
     
-    # TODO: write execution_graph.png
+    # write execution_graph.png
     # create the graph
     graph = sns.pointplot(data=average_times, x='K', y='Time', hue='Implementation', \
         linestyles='-', markers='o')
@@ -52,4 +52,4 @@ if __name__ == "__main__":
     max_y = max(average_times['Time'])
     # set the y-axis
     graph.set_yticks([i/4.0 for i in range(0, int(4*max_y)+1)])
-    graph.get_figure().savefig('execution_graph_1.png')
+    graph.get_figure().savefig('execution_graph.png')
